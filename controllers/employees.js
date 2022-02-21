@@ -20,3 +20,8 @@ const getSalariesById = (req, res) => {
         return res.json("getting employee salary data..." + rows);
     })
 }
+
+module.exports = {
+    getEmployeesByFirstName,
+    getSalariesById
+}
