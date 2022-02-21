@@ -1,5 +1,15 @@
-const mysql = require('mysql')
-const pool = require('../mysql/connection')
+const mysql = require('mysql');
+const pool = require('../mysql/connection');
+const { handleSQLError } = require('../mysql/error');
+
+const getEmployees = (req, res) => {
+    let sql = "SELECT * FROM employees";
+
+    pool.query(sql, (err, rows) => {
+        if (err) return handleSQLError(res, err)
+        return res.json("getting employees..." + rows);
+    })
+}
 
 const getEmployeesByFirstName = (req, res) => { 
     let sql = "SELECT * FROM employees WHERE first_name = ?";
@@ -22,6 +32,7 @@ const getSalariesById = (req, res) => {
 }
 
 module.exports = {
+    getEmployees,
     getEmployeesByFirstName,
     getSalariesById
 }
