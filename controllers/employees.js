@@ -2,7 +2,7 @@ const mysql = require('mysql')
 const pool = require('../mysql/connection')
 
 const getEmployeesByFirstName = (req, res) => { 
-    let sql = "SELECT * FROM employyes WHERE first_name = ?";
+    let sql = "SELECT * FROM employees WHERE first_name = ?";
     sql = mysql.format(sql, [req.body.first_name])
     
     pool.query(sql, (err, rows) => {
