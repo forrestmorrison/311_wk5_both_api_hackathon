@@ -1,14 +1,16 @@
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 4001;
+const bodyParser = require("body-parser");
 const employees = require('./routes/employees');
+require('dotenv').config()
+const port = process.env.PORT || 4001;
+const app = express();
 
 // app.get('/', (req, res) => {
 //     res.send('Welcome to our API');
 // })
 
-app.use(employees);
-
+app.use(bodyParser.json());
+app.use('/', employees);
 
 
 app.listen(port, () => {
