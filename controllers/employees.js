@@ -3,7 +3,7 @@ const pool = require('../mysql/connection');
 const { handleSQLError } = require('../mysql/error');
 
 const getEmployees = (req, res) => {
-    let sql = "SELECT * FROM employees";
+    let sql = "SELECT * FROM employees LIMIT 50";
 
     pool.query(sql, (err, rows) => {
         if (err) return handleSQLError(res, err)
