@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const employeeDatabase = {
   host     : process.env.HOST,
-  user     : process.env.USER,
+  user     : "root",
   password : process.env.PASSWORD,
   database : process.env.DATABASE,
   multipleStatements: true //allows execution of multiple SQL statements

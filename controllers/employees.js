@@ -31,19 +31,8 @@ const getEmployeesByFirstName = (req, res) => {
     })
 }
 
-// const getSalariesById = (req, res) => { 
-//     let sql = "SELECT * FROM salaries WHERE emp_no = ?";
-//     sql = mysql.format(sql, [req.body.emp_no]);
-    
-//     pool.query(sql, (err, rows) => {
-//         if (err) return handleSQLError(res, err);
-//         return res.json("getting employee salary data..." + rows);
-//     })
-// }
-
 module.exports = {
     getEmployees,
     getEmployeesById,
-    getEmployeesByFirstName,
-    // getSalariesById
+    getEmployeesByFirstName
 }
