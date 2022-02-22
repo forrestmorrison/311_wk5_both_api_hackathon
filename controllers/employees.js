@@ -7,7 +7,7 @@ const getEmployees = (req, res) => {
 
     pool.query(sql, (err, rows) => {
         if (err) return handleSQLError(res, err);
-        return res.json("getting employees..." + rows);
+        return res.json(rows);
     })
 }
 
@@ -17,7 +17,7 @@ const getEmployeesById = (req, res) => {
 
     pool.query(sql, (err, rows) => {
         if (err) return handleSQLError(res, err);
-        return res.json("getting employees..." + rows);
+        return res.json(rows);
     })
 }
 
@@ -27,7 +27,7 @@ const getEmployeesByFirstName = (req, res) => {
     
     pool.query(sql, (err, rows) => {
         if (err) return handleSQLError(res, err);
-        return res.json("getting employees..." + rows);
+        return res.json(rows);
     })
 }
 
